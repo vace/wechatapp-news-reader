@@ -1,0 +1,107 @@
+<!--新闻列表页面模板-->
+<!--
+id:news.news_id,
+title:news.news_title,
+data:news.news_date,
+parise:news.news_praise_count,
+commont:news.news_comment_count,
+summary:news.news_summary,
+icons:news.news_icon,
+style:news.news_style
+-->
+
+<!--无图模式-->
+<template name="newsStyle0">
+    <navigator url="/pages/news/detail?id={{ id }}&chid={{ chid }}&style={{ style }}&tag={{ tag }}">
+        <view class="article__item">
+            <view class="article__info">
+                <view class="article__title article__title__large">{{ title }}</view>
+                <view class="article__desc">
+                    <text class="article__source" wx:if="{{ tag }}">{{ tag }}</text>
+                    <text class="article__time">{{ date }}</text>
+                    <view class="article__count">
+                        <image class="article__icon" src="/image/icon-comt.png"></image>
+                        <text>{{ commont }}</text>
+                        <image class="article__icon" src="/image/icon-priaze.png"></image>
+                        <text>{{ parise }}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</template>
+
+<!--单大图模式-->
+<template name="newsStyle1">
+    <navigator url="/pages/news/detail?id={{ id }}&chid={{ chid }}&style={{ style }}&tag={{ tag }}">
+    <view class="article__item article__item__cover">
+        <view class="article__cover">
+            <view class="article__title">{{ title }}</view>
+            <image class="article__ad" mode="aspectFill" src="{{ icons[0] }}"></image>
+        </view>
+        <view class="article__desc">
+            <text class="article__source" wx:if="{{ tag }}">{{ tag }}</text>
+            <text class="article__time">{{ date }}</text>
+            <view class="article__count">
+                <image class="article__icon" src="/image/icon-comt.png"></image>
+                <text>{{ commont }}</text>
+                <image class="article__icon" src="/image/icon-priaze.png"></image>
+                <text>{{ parise }}</text>
+            </view>
+        </view>
+    </view>
+    </navigator>
+</template>
+
+<!--普通模式-->
+<template name="newsStyle2">
+    <navigator url="/pages/news/detail?id={{ id }}&chid={{ chid }}&style={{ style }}&tag={{ tag }}">
+    <view class="article__item">
+        <view class="article__thumb">
+            <image class="article__image" src="{{ icons[0] }}"></image>
+        </view>
+        <view class="article__info">
+            <view class="article__title article__title__large">{{ title }}</view>
+            <!--<view class="article__desc">
+                {{ summary }}
+            </view>-->
+            <view class="article__desc">
+                <text wx:if="{{ tag }}" class="article__source">{{ tag }}</text>
+                <text class="article__time">{{ date }}</text>
+                <view class="article__count">
+                    <image class="article__icon" src="/image/icon-comt.png"></image>
+                    <text>{{ commont }}</text>
+                    <image class="article__icon" src="/image/icon-priaze.png"></image>
+                    <text>{{ parise }}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    </navigator>
+</template>
+
+<!--三图模式-->
+<template name="newsStyle3">
+    <navigator url="/pages/news/detail?id={{ id }}&chid={{ chid }}&style={{ style }}&tag={{ tag }}">
+    <view class="article__item">
+        <view class="article__info">
+            <view class="article__title">{{ title }}</view>
+            <view class="article__images">
+                <image class="article__imgview" src="{{ icons[0] }}"></image>
+                <image class="article__imgview" src="{{ icons[1] }}"></image>
+                <image class="article__imgview" src="{{ icons[2] }}"></image>
+            </view>
+            <view class="article__desc">
+                <text class="article__source" wx:if="{{ tag }}">{{ tag }}</text>
+                <text class="article__time">{{ date }}</text>
+                <view class="article__count">
+                    <image class="article__icon" src="/image/icon-comt.png"></image>
+                    <text>{{ commont }}</text>
+                    <image class="article__icon" src="/image/icon-priaze.png"></image>
+                    <text>{{ parise }}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    </navigator>
+</template>

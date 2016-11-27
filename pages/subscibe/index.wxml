@@ -1,0 +1,24 @@
+<import src="../common/template/article.wxml"/>
+
+
+<view>
+  <!--<view class="navbar">
+    <view>推荐订阅</view>
+  </view>-->
+  <view class="subscibes">
+
+    <view class="subs" wx:for="{{ goodDingList }}" wx:key="id">
+      <navigator class="subs__hd" url="/pages/subscibe/article?chid={{ item.id }}">
+        <image class="subs__head" src="{{ item.headimg }}"></image>
+        <text>{{ item.name }}</text>
+        <image class="subs__icon" src="/image/icon-more.png"></image>
+      </navigator>
+      
+      <block wx:for="{{ item.news }}" wx:for-item="$item" wx:key="id">
+          <template is="{{ 'newsStyle' + $item.style }}" data="{{ ...$item }}" />
+      </block>
+
+    </view>
+
+  </view>
+</view>

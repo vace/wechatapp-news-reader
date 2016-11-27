@@ -1,0 +1,49 @@
+.page__detail{
+    display: block;
+    width: 19rem;
+    margin:0 auto;
+    background-color: #fff;
+    margin-top:0.4rem;
+}
+
+.detail__title{
+    font-size:36rpx;
+    line-height: 50rpx;
+    font-weight: 400;
+    word-break:break-word;
+    width: 100%;
+    text-align: left;
+}
+
+.article__desc{
+    margin: 30rpx 0;
+}
+
+.article__content{
+    font-size: 28rpx;
+    color: #333;
+    line-height: 42rpx;
+    word-break: break-all;
+    text-indent: 2em;
+}
+
+.detail__relation{
+    margin-top: 60rpx;
+    padding-bottom: 30rpx;
+}
+.relation__title{
+    border-left: 6rpx solid #d81e06;
+    padding-left: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.wxParse-img{
+    width: 20rem;
+    height: 8rem;
+    display:block;
+}
+
+.article__desc{
+    padding-bottom: 30rpx;
+    border-bottom: 1rpx solid #ccc;
+}

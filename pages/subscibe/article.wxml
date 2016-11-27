@@ -1,0 +1,21 @@
+<import src="../common/template/article.wxml"/>
+
+<view>
+    <view class="author__card">
+        <view>
+            <image class="author__headimg" src="{{ author.headimg }}"></image>
+            <view class="author__info">{{ author.name }}</view>
+        </view>
+        <view class="author__remark">
+            {{ author.remark }}
+        </view>
+    </view>
+
+    <view class="articles">
+        <block wx:for="{{ articles }}" wx:key="id">
+            <template is="{{ 'newsStyle' + item.style }}" data="{{ ...item }}" />
+        </block>
+    </view>
+
+    <include src="../common/template/footer.wxml"/>
+</view>

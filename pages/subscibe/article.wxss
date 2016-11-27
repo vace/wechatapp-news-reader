@@ -1,0 +1,27 @@
+.author__card{
+    background-color: #d81e06;
+    background: linear-gradient(128deg, #1296DB 26%, #D4237A 71%, #D81E06 100%);
+    padding: 20rpx 20rpx;
+    color:#fff;
+}
+.author__headimg{
+    width: 120rpx;
+    height:120rpx;
+    display: block;
+    margin: 0 auto;
+    border-radius: 60rpx;
+    box-shadow: 2rpx 2rpx 5rpx #eee;
+}
+
+.author__info{
+    text-align: center;
+    font-size: 32rpx;
+    margin:12rpx 0;
+    font-weight: 500;
+}
+
+.author__remark{
+    text-indent: 2em;
+    font-size: 24rpx;
+    line-height: 40rpx;
+}

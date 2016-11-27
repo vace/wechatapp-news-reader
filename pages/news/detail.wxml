@@ -1,0 +1,32 @@
+<import src="../../utils/wxParse/wxParse.wxml"/>
+
+
+<view class="page__detail">
+    <view class="detail">
+        <view class="detail__title">
+            {{ article.title }}
+        </view>
+        <view class="article__desc">
+            <text class="article__source" wx:if="{{ article.tag }}">{{ article.tag }}</text>
+            <text class="article__time">{{ article.date }}</text>
+            <view class="article__count">
+                <image class="article__icon" src="/image/icon-comt.png"></image>
+                <text>{{ article.comment }}</text>
+                <image class="article__icon" src="/image/icon-priaze.png"></image>
+                <text>{{ article.praise }}</text>
+            </view>
+        </view>
+
+        <view class="article__content wxParse">
+            <template is="wxParse" data="{{wxParseData}}"/>
+        </view>
+    </view>
+
+    <!-- 相关新闻 -->
+    <view class="detail__relation">
+        <view class="relation__title">相关新闻</view>
+        <view class="articles" style="font-size:20rpx;">
+            TODO
+        </view>
+    </view>
+</view>

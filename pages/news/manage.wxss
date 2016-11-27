@@ -1,0 +1,53 @@
+.container{
+    width: 18rem;
+    margin: 10px auto;
+    font-size: 32rpx;
+}
+.manage{
+    margin-bottom: 70rpx;
+}
+.manage__hd{
+    height: 50rpx;
+    line-height: 50rpx;
+    border-bottom: 4rpx solid #d81e06;
+}
+
+.manage__title{
+    font-weight: 500;
+}
+
+.manage__tips{
+    font-weight: 300;
+    font-size: 22rpx;
+    padding: 0 10rpx;
+    float: right;
+    color:#666;
+}
+
+.manage__bd{
+    padding-top: 20rpx;
+}
+
+.manage__tag{
+    padding: 10rpx 20rpx;
+    border: 1px solid #ccc;
+    border-radius: 8rpx;
+    color:#ccc;
+    font-size: 24rpx;
+    display: inline-block;
+    margin: 10rpx 16rpx;
+}
+
+.active{
+    color:#d81e06;
+    border-color: #d81e06;
+}
+
+.btn__control{
+    padding: 10px;
+    width: 99%;
+}
+.btn__control__mini{
+    margin-bottom: 20rpx;
+    font-size: 26rpx;
+}

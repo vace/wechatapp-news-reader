@@ -1,0 +1,32 @@
+.subscibes{
+  margin-top: 2rpx;
+}
+
+.subs{
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+
+.subs__hd{
+  display: flex;
+  align-items: center;
+  padding: 16rpx 20rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+  justify-content:space-between;
+  border-bottom: 1rpx solid #eee;
+}
+
+.subs__head{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  padding: 0 16rpx;
+}
+
+.subs__icon{
+  width: 40rpx;
+  height: 40rpx;
+  right:0
+}

@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="founds">
+    <view bindtap="keepDevelop" class="found" wx:for="{{ icons }}" wx:key="*this">
+      <image animation="{{ animationData }}" class="found__icon" src="/image/demo/icon-demo{{ item + 1 }}.png"></image>
+    </view>
+  <view>
+</view>
