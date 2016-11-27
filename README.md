@@ -11,18 +11,9 @@
 
 ## 界面截图
 
-#### 主页页面
-
-![demo1](screenshots/demo1.png)
-
-#### 设置页面
-
-![demo2](screenshots/demo2.png)
-
-#### 专题页面
-
-![demo3](screenshots/demo3.png)
-
-#### 专题列表页面
-
-![demo4](screenshots/demo4.png)
+<img style="margin:10px" width="320" src="screenshots/demo1.png" alt="主页页面">
+<img style="margin:10px" width="320" src="screenshots/demo2.png" alt="设置页面">
+<img style="margin:10px" width="320" src="screenshots/demo3.png" alt="专题页面">
+<img style="margin:10px" width="320" src="screenshots/demo4.png" alt="专题列表页面">
+<img style="margin:10px" width="320" src="screenshots/demo5.png" alt="详情页面">
+<img style="margin:10px" width="320" src="screenshots/demo6.png" alt="发现">
