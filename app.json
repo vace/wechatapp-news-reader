@@ -6,6 +6,7 @@
         "pages/subscibe/index",
         "pages/subscibe/article",
         "pages/found/index",
+
         "pages/user/index"
     ],
     "window": {
