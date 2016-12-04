@@ -6,8 +6,7 @@
         "pages/subscibe/index",
         "pages/subscibe/article",
         "pages/found/index",
-        "pages/user/index",
-        "pages/logs/logs"
+        "pages/user/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
