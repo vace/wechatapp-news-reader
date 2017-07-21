@@ -84,7 +84,7 @@ function requstPost(url,data){
   return requst(url,'POST',data)
 }
 
-const DOMAIN = 'https://ssl.52ahu.com/coverHttps.php'
+const DOMAIN = 'http://wx.diggid.cn/coverHttps.php'
 
 // 小程序上线需要https，这里使用服务器端脚本转发请求为https
 function requst(url,method,data = {}){
