@@ -1,5 +1,4 @@
-<import src="../../utils/wxParse/wxParse.wxml"/>
-
+<import src="../common/template/article.wxml"/>
 
 <view class="page__detail">
     <view class="detail">
@@ -7,8 +6,8 @@
             {{ article.title }}
         </view>
         <view class="article__desc">
-            <text class="article__source" wx:if="{{ article.tag }}">{{ article.tag }}</text>
-            <text class="article__time">{{ article.date }}</text>
+            <text class="article__source" wx:if="{{ article.author_name }}">{{ article.author_name }}</text>
+            <text class="article__time">{{ article.dayTime }}</text>
             <view class="article__count">
                 <image class="article__icon" src="/image/icon-comt.png"></image>
                 <text>{{ article.comment }}</text>
@@ -17,16 +16,18 @@
             </view>
         </view>
 
-        <view class="article__content wxParse">
-            <template is="wxParse" data="{{wxParseData}}"/>
-        </view>
-    </view>
-
-    <!-- 相关新闻 -->
-    <view class="detail__relation">
-        <view class="relation__title">相关新闻</view>
-        <view class="articles" style="font-size:20rpx;">
-            TODO
+        <view class="article__content">
+            <mp-html content="{{ article.content }}" tag-style="{{ tagStyle }}" />
         </view>
     </view>
 </view>
+
+<!-- 相关新闻 -->
+<view class="detail__relation">
+    <view class="relation__title">相关新闻</view>
+    <block wx:for="{{ relations }}" wx:key="id">
+        <template is="{{ 'newsStyle' + item.style }}" data="{{ ...item }}" />
+    </block>
+</view>
+
+<include src="../common/template/footer.wxml"/>

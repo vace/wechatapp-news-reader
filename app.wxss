@@ -1,6 +1,3 @@
-@import "./utils/wxParse/wxParse.wxss";
-
-
 /**app.wxss**/
 .page {
     min-height: 100%;
@@ -26,34 +23,32 @@
 }
 .article__item{
   display: flex;
-  padding: 30rpx;
+  padding: 30rpx 20rpx;
   align-items: center;
   border-bottom: 1rpx solid #eee;
   position: relative;
-  padding-bottom: 40rpx;
+  padding-bottom: 20rpx;
 }
 .article__thumb{
-  width:4.2rem;
-  height: 3rem;
-  margin-right: 0.6rem;
+  width: 160rpx;
+  height: 140rpx;
+  margin-right: 20rpx;
 }
 .article__image{
-  width:4.2rem;
-  height: 3rem;
+  width:160rpx;
+  height: 140rpx;
 }
 .article__info{
   flex: 1;
-  width: 100%;
-  overflow: hidden;
 }
 .article__title{
   font-weight: 400;
   font-size: 26rpx;
   text-overflow: ellipsis;
-  white-space:nowrap;
   display: block;
   width: 100%;
   margin-bottom: 20rpx;
+  overflow: hidden;
 }
 /* 支持多行 */
 .article__title__large{
@@ -76,13 +71,13 @@
 }
 .article__ad{
   width: 100%;
-  height: 4rem;
+  height: 240rpx;
   border-radius: 10rpx;
 }
 
 .article__remark{
   bottom: 0;
-  width: 20rem;
+  width: 750rpx;
   display: block;
   font-size: 28rpx;
 }

@@ -1,0 +1,25 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "dev",
+          "pathName": "pages/news/detail",
+          "query": "id=1000",
+          "scene": null,
+          "launchMode": "default"
+        }
+      ]
+    }
+  }
+}

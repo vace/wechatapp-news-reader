@@ -19,9 +19,9 @@
 }
 
 .subs__head{
-  width: 40rpx;
-  height: 40rpx;
-  border-radius: 20rpx;
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 100%;
   padding: 0 16rpx;
 }
 

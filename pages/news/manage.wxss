@@ -1,5 +1,5 @@
 .container{
-    width: 18rem;
+    width: 700rpx;
     margin: 10px auto;
     font-size: 32rpx;
 }
@@ -35,7 +35,7 @@
     color:#ccc;
     font-size: 24rpx;
     display: inline-block;
-    margin: 10rpx 16rpx;
+    margin: 10rpx;
 }
 
 .active{

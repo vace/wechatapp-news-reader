@@ -1,9 +1,9 @@
 .page__detail{
     display: block;
-    width: 19rem;
+    width: 720rpx;
     margin:0 auto;
     background-color: #fff;
-    margin-top:0.4rem;
+    margin-top:20rpx;
 }
 
 .detail__title{
@@ -37,13 +37,17 @@
     margin-bottom: 30rpx;
 }
 
-.wxParse-img{
-    width: 20rem;
-    height: 8rem;
-    display:block;
-}
-
 .article__desc{
     padding-bottom: 30rpx;
     border-bottom: 1rpx solid #ccc;
+}
+
+.article__content {
+    max-width: 720rpx;
+    overflow: hidden;
+}
+
+.article__content ._p, .article__content ._h1, .article__content ._h2, .article__content ._h3, .article__content ._h4 {
+    line-height: 1.8;
+    margin-bottom: 14px;
 }

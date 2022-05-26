@@ -5,9 +5,9 @@
             <text class="manage__tips">点击删除频道</text>
         </view>
         <view class="manage__bd">
-            <block wx:for="{{ categorys }}" wx:key="lanmu_id" wx:if="{{ item.selected }}">
-                <view catchtap="deleteCategory" data-key="{{ index }}" data-id="{{ item.lanmu_id }}" class="manage__tag">
-                    {{ item.lanmu_name }}
+            <block wx:for="{{ categoryList }}" wx:key="id" wx:if="{{ item.selected }}">
+                <view bindtap="delSubscribe" data-id="{{ item.id }}" class="manage__tag">
+                    {{ item.name }}
                 </view>
             </block> 
         </view>
@@ -19,9 +19,9 @@
             <text class="manage__tips">点击添加频道</text>
         </view>
         <view class="manage__bd">
-            <block wx:for="{{ categorys }}" wx:key="lanmu_id">
-                <view catchtap="addCategory" data-key="{{ index }}" data-id="{{ item.lanmu_id }}" class="manage__tag {{ item.selected ? 'active' : '' }}">
-                    {{ item.lanmu_name }}
+            <block wx:for="{{ categoryList }}" wx:key="id">
+                <view bindtap="addSubscribe" data-id="{{ item.id }}" class="manage__tag {{ item.selected ? 'active' : '' }}">
+                    {{ item.name }}
                 </view> 
             </block>
         </view>
@@ -29,7 +29,7 @@
 
 
    <view class="btn__control">
-        <button bindtap="selectAll" type="default" class="btn__control__mini">全部选择</button>
-        <button bindtap="returnIndex" type="primary" class="btn__control__mini">返回首页</button>
+        <button bindtap="subscribeAll" type="default" class="btn__control__mini">全部选择</button>
+        <button bindtap="onBackHome" type="primary" class="btn__control__mini">返回首页</button>
    </view>
 </view>

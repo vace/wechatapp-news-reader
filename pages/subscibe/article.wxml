@@ -3,11 +3,11 @@
 <view>
     <view class="author__card">
         <view>
-            <image class="author__headimg" src="{{ author.headimg }}"></image>
-            <view class="author__info">{{ author.name }}</view>
+            <image class="author__headimg" src="{{ channel.avatar }}"></image>
+            <view class="author__info">{{ channel.name }}</view>
         </view>
         <view class="author__remark">
-            {{ author.remark }}
+            这里只是用于展示的测试数据，包含以下的新闻列表均为模拟数据，仅供测试，朋友你好，我是 {{ channel.name }}，账号是{{ channel.account }}。
         </view>
     </view>
 

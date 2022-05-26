@@ -1,58 +1,76 @@
 //index.js
+
+const { getCategroyList, getHomeBannerList, getNewsByCategory } = require("../../utils/api")
+
 //获取应用实例
-const $vm = getApp()
-
-const cache = Object.create(null)
-
-const {decodeHtml,parseNews} = $vm.utils
-
-
 Page({
-    _isLoading:false,
     data: {
-        swiperList:[],
-        articles:[],
-        categoryTabs:[],
-        currentTab:0
+        bannerList: [],
+        categoryTabs: [],
+        currentTab: 0,
+        newsCache: {},
+        news: {}
     },
-    onShow(){
-        if($vm.globalData.categoryChanged){
-            $vm.utils.getCategorys().then(res => this.setData({
-                categoryTabs:res
-            }))
-            $vm.globalData.categoryChanged = false
-        }
+    onLoad () {
+        this.doLoadHomeBanners()
     },
-    onReady(){
-        this.getNewsList()
+    onShow (){
+        this.doLoadCategorys()
     },
-    onLoad: function() {
 
+    async doLoadCategorys () {
+        const categorys = await getCategroyList()
+        const categoryTabs = categorys.filter(c => c.selected)
+        this.setData({ categoryTabs, currentTab: categoryTabs[0].id })
+        this.doLoadNews()
+    },
+    async doLoadHomeBanners () {
+        const bannerList = await getHomeBannerList()
+        this.setData({ bannerList })
+    },
+    async doLoadNews () {
+        const { currentTab, newsCache } = this.data
+        if (!newsCache[currentTab]) {
+            newsCache[currentTab] = { categoryId: currentTab, page: 1, isLoading: false, newsList: [] }
+        }
+        const news = newsCache[currentTab]
+        if (news.isLoading) {
+            return
+        }
+        news.isLoading = true
+        this.setData({ news })
+        try {
+            const newslist = await getNewsByCategory(news.categoryId, news.page)
+            if (newslist.length) {
+                news.page += 1
+                news.newsList.push(...newslist)
+            }
+            news.isLoading = false
+        } catch (err) {
+            news.isLoading = false
+        }
+        this.setData({ news })
     },
 
     // 页面相关事件处理函数--监听用户下拉动作，下拉刷新
     onPullDownRefresh(){
-        // 刷新页面，清空当前的缓存，重新获取
-        var chid = this.data.currentTab
-        // 命中缓存
-        if(cache[chid]){
-            cache[chid] = {slides:[],news:[],page:0,time:Date.now()}
-        }
-        this.getNewsList(chid)
+        this.newsCache = {}
+        this.doLoadNews()
     },
-    // 到达底部，重新加载
+    // 到达底部，继续将在
     onReachBottom(){
-        this.getNewsList(this.data.currentTab,1)
+        this.doLoadNews()
     },
     // 切换当前选择的分类
-    changeCategory(event){
-        var chid = event.target.dataset.id
-        // 获取ccurrentTab.没有切换分类
-        if(this.data.currentTab === chid){
-            return false
+    changeCategory (event){
+        const { newsCache } = this.data
+        var tabId = event.target.dataset.id
+        if (newsCache[tabId]) {
+            this.setData({ news: newsCache[tabId], currentTab: tabId })
+        } else {
+            this.doLoadNews()
+            this.setData({ currentTab: tabId })
         }
-        this.setData({ currentTab:chid })
-        this.getNewsList(chid,0)
     },
     getNewsList(chid = 0,page = 0){
         
@@ -72,7 +90,7 @@ Page({
             // 直接从缓存中取出
             if(infos.news.length){
                 this.setData({
-                    swiperList:infos.slides,
+                    bannerList:infos.slides,
                     articles:infos.news
                 })
                 return false
@@ -109,7 +127,7 @@ Page({
                     infos.slides.push(...banners)
                 }
                 this.setData({
-                    swiperList:infos.slides,
+                    bannerList:infos.slides,
                     articles:infos.news
                 })
             }
@@ -118,8 +136,6 @@ Page({
 
     },
     manageTabs(){
-        wx.navigateTo({
-            url:'/pages/news/manage'
-        })
+        wx.navigateTo({ url:'/pages/news/manage' })
     }
 })

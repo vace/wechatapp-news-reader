@@ -8,16 +8,16 @@
 }
 
 .founds{
-  width: 16rem;
+  width: 600rpx;
 }
 .found{
-  padding: 0.3rem;
+  padding: 10rpx;
   float:left;
 }
 .found__icon{
-  width: 2rem;
-  height: 2rem;
-  padding: 0.7rem;
+  width: 94rpx;
+  height: 94rpx;
+  padding: 16rpx;
   border-radius: 100%;
   opacity: 0.2;
   /*background-color: #fff;*/

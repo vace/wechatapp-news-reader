@@ -1,6 +1,6 @@
 /**index.wxss**/
 .swiper__container{
-    height: 11rem;
+    height: 420rpx;
 }
 .swiper__desc{
     position: absolute;
@@ -16,8 +16,8 @@
 
 .swiper__item{
     display: block;
-    width: 20rem;
-    height: 11rem;
+    width: 750rpx;
+    height: 420rpx;
 }
 
 .swiper__id{
@@ -37,7 +37,7 @@
     position: relative;
 }
 .sv__container{
-    width: 18rem;
+    width: 680rpx;
     height: 64rpx;
     white-space: nowrap;
 }
@@ -47,7 +47,7 @@
 }
 .sv-manager{
     padding-left:20rpx;
-    width: 1rem;
-    height: 1rem;
+    width: 36rpx;
+    height: 36rpx;
     vertical-align: center;
 }
